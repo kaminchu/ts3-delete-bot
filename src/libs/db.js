@@ -5,18 +5,14 @@ export default class DB {
   path: string;
   encoding: string;
 
-  constructor(){
+  constructor(path: string){
     // default setting
-    this.path = "db.json";
+    this.path = path;
     this.encoding = "utf-8";
   }
 
   setEncoding(encoding: string): void {
     this.encoding = encoding;
-  }
-
-  setPath(path: string): void {
-    this.path = path;
   }
 
   write(data: Object): Promise<void> {

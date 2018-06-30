@@ -1,7 +1,7 @@
 // @flow
 import "babel-polyfill";
 // TODO test
-import DB from "./libs/db";
+import CannelRepository from "./repository/channel";
 
 const obj = {
   aaa: "aaaa",
@@ -9,9 +9,7 @@ const obj = {
 };
 
 (async () => {
-  const db = new DB();
-  await db.write(obj);
+  const repository = new CannelRepository();
+  await repository.save(obj);
 
-  const result = await db.read();
-  console.log(result);
 })();
