@@ -1,0 +1,8 @@
+{
+  "host": "localhost",
+  "port": 10011,
+  "user": "serveradmin",
+  "password": "xxxxxxxx",
+  "excludeIds": [],
+  "lifeTime": 2592000000
+}

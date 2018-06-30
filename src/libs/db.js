@@ -45,6 +45,5 @@ export default class DB {
         resolve(data);
       });
     });
-
   }
 }

@@ -1,15 +1,23 @@
 // @flow
 import "babel-polyfill";
-// TODO test
-import CannelRepository from "./repository/channel";
 
-const obj = {
-  aaa: "aaaa",
-  bbb: "bbbb"
-};
+// TODO test
+import * as Reader from "./libs/reader";
+import Deleter from "./deleter";
+
 
 (async () => {
-  const repository = new CannelRepository();
-  await repository.save(obj);
-
+  const config = await Reader.config();
+  console.log(config);
+  const deleter = new Deleter(
+    config.host,
+    config.port,
+    config.user,
+    config.password,
+    config.excludeIds,
+    config.lifeTime
+  );
+  await deleter.delete();
+  process.exit(0);
 })();
+

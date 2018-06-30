@@ -1,9 +1,7 @@
 // @flow
-import _ from "lodash";
 import DB from "../libs/db";
 
-
-type Record = {
+export type Record = {
   id: number,
   name: string,
   usedTime: number,
@@ -20,7 +18,7 @@ export default class Channel {
     return await this.db.write(channels);
   }
 
-  async getAll(): void {
+  async getAll(): Promise<Record[]> {
     return await this.db.read();
   }
 }

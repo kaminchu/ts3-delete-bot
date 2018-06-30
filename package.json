@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "start": "node index.js",
-    "flow": "flow"
+    "flow": "flow",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,19 @@
   "homepage": "https://github.com/kaminchu/ts3-delete-bot#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babelrc-rollup": "^3.0.0",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "flow-bin": "^0.75.0",
     "flow-typed": "^2.4.0",
     "rollup": "^0.62.0",
@@ -33,6 +42,7 @@
   },
   "dependencies": {
     "jsonfile": "^4.0.0",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "teamspeak": "^0.0.5"
   }
 }
