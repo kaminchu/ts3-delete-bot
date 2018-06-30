@@ -8,7 +8,6 @@ import Deleter from "./deleter";
 
 (async () => {
   const config = await Reader.config();
-  console.log(config);
   const deleter = new Deleter(
     config.host,
     config.port,
