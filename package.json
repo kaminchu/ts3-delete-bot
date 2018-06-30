@@ -1,0 +1,26 @@
+{
+  "name": "ts3-delete-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kaminchu/ts3-delete-bot.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaminchu/ts3-delete-bot/issues"
+  },
+  "homepage": "https://github.com/kaminchu/ts3-delete-bot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-flow": "^6.23.0",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.5"
+  }
+}
