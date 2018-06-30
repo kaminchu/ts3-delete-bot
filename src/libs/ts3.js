@@ -3,26 +3,27 @@ import {Client} from "teamspeak";
 
 export default class TS3 {
   host: string;
-  port: nmber;
+  port: number;
   query: any;
 
   constructor(host: string, port: number) {
     this.host = host;
     this.port = port;
   }
-  open(){
-    this.query = new Client(this.hots, this.port);
+
+  open(): void {
+    this.query = new Client(this.host, this.port);
   }
  
-  close(){
+  close(): void {
     this.query = null;
   }
 
-  async use(serverId: number){
+  async use(serverId: number) {
     await this.query.send("use", "" + serverId);
   }
 
-  async channels(): Promise<string> {
+  async channels(): Promise<any> {
     return await this.query.send("channellist");
   }
 
@@ -30,11 +31,11 @@ export default class TS3 {
     await this.query.send("channeldelete", {cid: channelId + "", force: "0"});
   }
 
-  async login(user: string, pass: string){
+  async login(user: string, pass: string) {
     await this.query.authenticate(user, pass);
   }
 
-  async logout(){
+  async logout() {
     await this.query.send("logout");
   }
 }

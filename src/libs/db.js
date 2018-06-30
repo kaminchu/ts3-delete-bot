@@ -15,7 +15,7 @@ export default class DB {
     this.encoding = encoding;
   }
 
-  write(data: Object): Promise<void> {
+  write(data: any): Promise<void> {
     return new Promise((resolve, reject) => {
       const option = {
         encoding: this.encoding, 

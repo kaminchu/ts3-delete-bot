@@ -20,7 +20,7 @@ export default class Deleter {
   lifeTime: number;
   current: number;
 
-  constructor(host, port, user, password, excludeIds, lifeTime){
+  constructor(host: string, port: number, user: string, password: string, excludeIds: number[], lifeTime: number){
     this.host= host;
     this.port = port;
     this.user = user;
@@ -30,7 +30,7 @@ export default class Deleter {
     this.current = Date.now();
   }
 
-  async _fetchTS3Channels(): TS3Channel[]{
+  async _fetchTS3Channels(): Promise<TS3Channel[]>{
     const ts3 = new TS3(this.host, this.port);
     ts3.open();
     await ts3.login(this.user, this.password);
@@ -76,7 +76,7 @@ export default class Deleter {
     return uniq(ganaratedIds);
   }
 
-  async init(registeredChannels: Record[], ts3Channels: TS3Channel[]): boolean {
+  async init(registeredChannels: Record[], ts3Channels: TS3Channel[]): Promise<boolean> {
     if (!registeredChannels || !Array.isArray(registeredChannels) || registeredChannels.length < 1) {
       const repository = new Repository();
       const activeChannels = ts3Channels.map(({id, name}) => ({id, name, usedTime: this.current}));
@@ -116,6 +116,6 @@ export default class Deleter {
         };
       }).filter(elm => !!elm);
     const repository = new Repository();
-    await repository.save(activeChannels);
+    await repository.save((activeChannels: any));
   }
 }

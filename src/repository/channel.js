@@ -14,8 +14,8 @@ export default class Channel {
     this.db = new DB("db/channels.json");
   }
 
-  async save(channels: Record[]): void {
-    return await this.db.write(channels);
+  async save(channels: Record[]){
+    await this.db.write(channels);
   }
 
   async getAll(): Promise<Record[]> {
