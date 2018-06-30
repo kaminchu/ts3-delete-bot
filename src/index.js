@@ -1,7 +1,5 @@
 // @flow
 import "babel-polyfill";
-
-// TODO test
 import * as Reader from "./libs/reader";
 import Deleter from "./deleter";
 
