@@ -7,6 +7,12 @@ TeamSpeak3 Channel Delete bot.
 TeamSpeak3を監視して利用のないチャンネルを消してくれるやつ
 
 ## Installation
+このリポジトリを取得
+```
+$ git clone https://github.com/kaminchu/ts3-delete-bot.git ~/ts3-delete-bot
+$ cd ~/ts3-delete-bot
+```
+
 `yarn`でよしなに
 ```
 $ yarn install
@@ -44,5 +50,5 @@ $ crontab -e
 ```
 
 ```
-*/5 *   *   *   *   /usr/local/bin/node  /path/to/index.js 1> /dev/null
+*/5 *   *   *   *   /usr/bin/node  ts3-delete-bot/index.js 1> /dev/null
 ```
